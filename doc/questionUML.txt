@@ -1,2 +1,67 @@
-Ecrire ici votre réponse à la question UML.
+
+pour le premier modèle utilise une seule classe Event et délègue la répétition à une classe Repetition associée, ainsi que la terminaison à une classe Termination il utilise la composition alors que deuxieme  utilise l’héritage pour distinguer les événements simples, répétitifs et ceux avec terminaison 
+
+1er  modèle:
+    Avantages:
+    - séparation claire de responsabilité entre les classes Chaque classe a une tâche Event gère l'événement Repetition gère la fréquence et Termination gère la fin
+    -plus flexible tu peux créer un Event simple, puis décider après si tu veux le faire répéter ou ajouter une termination
+    - Moins de classes: il ya seulement 4 classes Event, Repetition, Termination, Agenda C'est beaucoup plus simple à gérer et comprendre
+
+    Inconvénients:
+    -pour créer un événement complet, tu dois faire : créer Event → ajouter Repetition → ajouter Termination. C'est plusieurs étapes
+    -il est difficile de distinguer différents types d'événements
+    - Il faut toujours vérifier si myRepetition existe avant de l'utiliser
+    - Logique compliquée La méthode isInDay() est complexe parce qu'elle doit gérer tous les cas possibles 
+    -structure complexe  et implémentation plus longue, surtout pour les tests et les relations
+
+
+
+modéle 2 : 
+    Avantages:
+    -  Toutes les informations (fréquence, exceptions, terminaison) seraient dans Event, donc pas besoin de naviguer entre plusieurs classes
+    - Chaque classe gère son propre comportement du coup un Event simple = logique simple , RepetitiveEvent = logique de répétition....
+    -il est Facile à étendre si on veut   ajouter "événement spécial" on Crée juste une nouvelle classe qui hérite de Event
+    Inconvénients:
+    -  Si tu crées un SimpleEvent, tu ne peux pas le transformer en RepetitiveEvent après. Tu dois créer un nouvel objet
+    -Plusieurs logiques mélangées dans une seule classe
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
